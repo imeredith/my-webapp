@@ -50,10 +50,13 @@
                      <goal>prepare-agent</goal>
                   </goals>
                </execution>
-               <!-- 
-                  (i) invoking jacoco check as part of the 'verify' phase (with a threshold) is a good practice 
-                  but is not required to enforce compliance
-               -->
+               <execution>
+                  <id>prepare-xml-report</id>
+                  <goals>
+                     <goal>report</goal>
+                  </goals>
+                  <phase>verify</phase>
+               </execution>
             </executions>
          </plugin>
       </plugins>
