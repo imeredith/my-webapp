@@ -4,7 +4,8 @@ pipeline {
       stage ('Build App' /*, compliance-check: "build-checks" */ ) {
          steps {
             echo "building"
-            mvn compile
+            sh "mvn compile"
+            sh "mvn test"
          }
       }
    }
