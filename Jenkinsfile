@@ -3,9 +3,8 @@ pipeline {
    stages {
       stage ('Build App' /*, compliance-check: "build-checks" */ ) {
          steps {
-            withMaven() {
-               sh "./mvnw verify"
-            }
+            echo "building"
+            mvn compile
          } // withMaven automatically collects jacoco reports
          // perform compliance checks related to the "Build" stage
       }
